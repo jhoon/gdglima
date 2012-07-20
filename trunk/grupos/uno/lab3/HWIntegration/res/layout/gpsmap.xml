@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+        
+<LinearLayout
+	    android:orientation="horizontal"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content">
+	    
+		<Button 
+			android:id="@+id/zoomin"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:text="+"
+		    android:padding="12px"
+		    android:onClick="customClickHandler"
+		/>
+		<Button 
+			android:id="@+id/zoomout"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:text="-"
+		    android:padding="12px"
+		    android:onClick="customClickHandler"
+		/>
+
+</LinearLayout>
+
+<com.google.android.maps.MapView
+	android:id="@+id/mapview"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:enabled="true"
+    android:clickable="true"
+    android:apiKey="your_apikey_goes_here" 
+/>
+
+</LinearLayout>

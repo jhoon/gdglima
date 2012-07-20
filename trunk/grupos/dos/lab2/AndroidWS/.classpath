@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry kind="lib" path="C:/Documents and Settings/Administrator/.m2/repository/org/springframework/android/spring-android-rest-template/1.0.0.M2/spring-android-rest-template-1.0.0.M2.jar"/>
+	<classpathentry kind="lib" path="D:/backup synopsis/DVD/lib/simple-xml-2.5.1.jar"/>
+	<classpathentry kind="lib" path="C:/Documents and Settings/Administrator/.m2/repository/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Documents and Settings/Administrator/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.7.3/jackson-core-asl-1.7.3.jar"/>
+	<classpathentry kind="lib" path="C:/Documents and Settings/Administrator/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.7.3/jackson-mapper-asl-1.7.3.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
