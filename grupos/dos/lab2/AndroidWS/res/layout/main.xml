@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_centerVertical="true"
+    >
+    		
+	<TextView
+        android:id="@+id/label"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="4dip"
+        android:text="Nombre :"
+        />
+		
+	<EditText
+		android:id="@+id/edit_text_androidphone_nombre"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:padding="8dip"
+		android:singleLine="true"
+		/>
+		
+	<TextView
+        android:id="@+id/label"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="4dip"
+        android:text="Marca :"
+        />
+		
+	<EditText
+		android:id="@+id/edit_text_androidphone_marca"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:padding="8dip"
+		android:singleLine="true"
+		/>
+		
+	<TextView
+        android:id="@+id/label"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="4dip"
+        android:text="Version :"
+        />
+		
+	<EditText
+		android:id="@+id/edit_text_androidphone_version"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:padding="8dip"
+		android:singleLine="true"
+		/>
+	
+	<Button
+		android:id="@+id/button_post_registrar"
+		android:text="Registrar Celular"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"		
+		/>
+		
+	<Button
+		android:id="@+id/button_post_listar"
+		android:text="listar Celulares"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"		
+		/>
+	
+</LinearLayout>
