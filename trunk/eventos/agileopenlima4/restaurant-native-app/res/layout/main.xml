@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/mr_titulo" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" android:padding="4pt" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" android:padding="4pt" >
+
+            <Button android:id="@+id/btnCarta"
+                style="@style/HomeButton"
+                android:drawableTop="@drawable/food"
+                android:text="La carta" />
+
+            <Button android:id="@+id/btnLocales"
+                style="@style/HomeButton"
+                android:drawableTop="@drawable/woodenmap"
+                android:text="Locales" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" android:padding="4pt"  >
+
+            <Button android:id="@+id/btnPromociones"
+                style="@style/HomeButton"
+                android:drawableTop="@drawable/chef"
+                android:text="Sugerencia del Chef" />
+
+            <Button android:id="@+id/btnDelivery"
+                style="@style/HomeButton"
+                android:drawableTop="@drawable/delivery"
+                android:text="Delivery" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" android:padding="4pt"  >
+
+            <Button android:id="@+id/btnReservaciones"
+                style="@style/HomeButton"
+                android:drawableTop="@drawable/list"
+                android:text="Reservaciones" />
+
+            <Button android:id="@+id/btnAcercaDe"
+                style="@style/HomeButton"
+                android:drawableTop="@drawable/information"
+                android:text="Acerca De" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
