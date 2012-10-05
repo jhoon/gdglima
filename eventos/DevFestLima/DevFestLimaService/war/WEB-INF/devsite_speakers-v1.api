@@ -1,0 +1,191 @@
+{
+  "extends" : "thirdParty.api",
+  "abstract" : false,
+  "root" : "https://myapp.appspot.com/_ah/api",
+  "name" : "devsite_speakers",
+  "version" : "v1",
+  "description" : "",
+  "defaultVersion" : false,
+  "adapter" : {
+    "bns" : "http://myapp.appspot.com/_ah/spi",
+    "deadline" : 10.0,
+    "type" : "lily"
+  },
+  "auth" : {
+    "allowCookieAuth" : false
+  },
+  "frontendLimits" : {
+    "unregisteredUserQps" : -1,
+    "unregisteredQps" : -1,
+    "unregisteredDaily" : -1,
+    "rules" : [ ]
+  },
+  "cacheControl" : {
+    "type" : "no-cache",
+    "maxAge" : 0
+  },
+  "methods" : {
+    "devsite_speakers.removeSpeakers" : {
+      "path" : "speakers/{id}",
+      "httpMethod" : "DELETE",
+      "rosyMethod" : "SpeakersEndpoint.removeSpeakers",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "required" : true,
+            "type" : "string"
+          }
+        },
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "devsite_speakers.updateSpeakers" : {
+      "path" : "speakers",
+      "httpMethod" : "PUT",
+      "rosyMethod" : "SpeakersEndpoint.updateSpeakers",
+      "request" : {
+        "parameters" : {
+        },
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "devsite_speakers.insertSpeakers" : {
+      "path" : "speakers",
+      "httpMethod" : "POST",
+      "rosyMethod" : "SpeakersEndpoint.insertSpeakers",
+      "request" : {
+        "parameters" : {
+        },
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "devsite_speakers.speakers.list" : {
+      "path" : "speakers/list",
+      "httpMethod" : "GET",
+      "rosyMethod" : "SpeakersEndpoint.listSpeakers",
+      "request" : {
+        "parameters" : {
+        },
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "devsite_speakers.getSpeakers" : {
+      "path" : "speakers/{id}",
+      "httpMethod" : "GET",
+      "rosyMethod" : "SpeakersEndpoint.getSpeakers",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "required" : true,
+            "type" : "string"
+          }
+        },
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    }
+  },
+  "descriptor" : {
+    "schemas" : {
+      "Speakers" : {
+        "id" : "Speakers",
+        "type" : "object",
+        "properties" : {
+          "bio" : {
+            "type" : "string"
+          },
+          "displayName" : {
+            "type" : "string"
+          },
+          "firstName" : {
+            "type" : "string"
+          },
+          "id" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "lastName" : {
+            "type" : "string"
+          },
+          "plusOneUrl" : {
+            "type" : "string"
+          },
+          "speakerId" : {
+            "type" : "string"
+          },
+          "thumbnailUrl" : {
+            "type" : "string"
+          },
+          "userId" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Speakerss" : {
+        "id" : "Speakerss",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "Speakers"
+            }
+          }
+        }
+      }
+    },
+    "methods" : {
+      "SpeakersEndpoint.removeSpeakers" : {
+        "response" : {
+          "$ref" : "Speakers"
+        }
+      },
+      "SpeakersEndpoint.updateSpeakers" : {
+        "request" : {
+          "$ref" : "Speakers"
+        },
+        "response" : {
+          "$ref" : "Speakers"
+        }
+      },
+      "SpeakersEndpoint.insertSpeakers" : {
+        "request" : {
+          "$ref" : "Speakers"
+        },
+        "response" : {
+          "$ref" : "Speakers"
+        }
+      },
+      "SpeakersEndpoint.listSpeakers" : {
+        "response" : {
+          "type" : "object",
+          "$ref" : "Speakerss"
+        }
+      },
+      "SpeakersEndpoint.getSpeakers" : {
+        "response" : {
+          "$ref" : "Speakers"
+        }
+      }
+    }
+  }
+}
