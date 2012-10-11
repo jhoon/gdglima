@@ -1,13 +1,13 @@
 {
   "extends" : "thirdParty.api",
   "abstract" : false,
-  "root" : "https://myapp.appspot.com/_ah/api",
-  "name" : "devsite_speakers",
+  "root" : "https://gdgdevfestlima.appspot.com/_ah/api",
+  "name" : "speakers",
   "version" : "v1",
-  "description" : "",
+  "description" : "Esta entidad representa a los expositores.",
   "defaultVersion" : false,
   "adapter" : {
-    "bns" : "http://myapp.appspot.com/_ah/spi",
+    "bns" : "http://gdgdevfestlima.appspot.com/_ah/spi",
     "deadline" : 10.0,
     "type" : "lily"
   },
@@ -25,7 +25,71 @@
     "maxAge" : 0
   },
   "methods" : {
-    "devsite_speakers.removeSpeakers" : {
+    "speakers.speakers.list" : {
+      "path" : "speakers/list",
+      "httpMethod" : "GET",
+      "rosyMethod" : "SpeakersEndpoint.listSpeakers",
+      "request" : {
+        "parameters" : {
+          "cursor" : {
+            "required" : false,
+            "type" : "string"
+          },
+          "limit" : {
+            "required" : false,
+            "type" : "integer"
+          }
+        },
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "speakers.addToSearchIndex" : {
+      "path" : "addToSearchIndex",
+      "httpMethod" : "POST",
+      "rosyMethod" : "SpeakersEndpoint.addToSearchIndex",
+      "request" : {
+        "parameters" : {
+        },
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    },
+    "speakers.speakers.insert" : {
+      "path" : "speakers/insert",
+      "httpMethod" : "POST",
+      "rosyMethod" : "SpeakersEndpoint.insertSpeakers",
+      "request" : {
+        "parameters" : {
+        },
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "speakers.updateSpeakers" : {
+      "path" : "speakers",
+      "httpMethod" : "PUT",
+      "rosyMethod" : "SpeakersEndpoint.updateSpeakers",
+      "request" : {
+        "parameters" : {
+        },
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "speakers.removeSpeakers" : {
       "path" : "speakers/{id}",
       "httpMethod" : "DELETE",
       "rosyMethod" : "SpeakersEndpoint.removeSpeakers",
@@ -43,50 +107,8 @@
         "body" : "autoTemplate(backendResponse)"
       }
     },
-    "devsite_speakers.updateSpeakers" : {
-      "path" : "speakers",
-      "httpMethod" : "PUT",
-      "rosyMethod" : "SpeakersEndpoint.updateSpeakers",
-      "request" : {
-        "parameters" : {
-        },
-        "body" : "autoTemplate(backendRequest)",
-        "bodyName" : "resource"
-      },
-      "response" : {
-        "body" : "autoTemplate(backendResponse)"
-      }
-    },
-    "devsite_speakers.insertSpeakers" : {
-      "path" : "speakers",
-      "httpMethod" : "POST",
-      "rosyMethod" : "SpeakersEndpoint.insertSpeakers",
-      "request" : {
-        "parameters" : {
-        },
-        "body" : "autoTemplate(backendRequest)",
-        "bodyName" : "resource"
-      },
-      "response" : {
-        "body" : "autoTemplate(backendResponse)"
-      }
-    },
-    "devsite_speakers.speakers.list" : {
-      "path" : "speakers/list",
-      "httpMethod" : "GET",
-      "rosyMethod" : "SpeakersEndpoint.listSpeakers",
-      "request" : {
-        "parameters" : {
-        },
-        "body" : "autoTemplate(backendRequest)",
-        "bodyName" : "resource"
-      },
-      "response" : {
-        "body" : "autoTemplate(backendResponse)"
-      }
-    },
-    "devsite_speakers.getSpeakers" : {
-      "path" : "speakers/{id}",
+    "speakers.speakers.get" : {
+      "path" : "speakers/get/{id}",
       "httpMethod" : "GET",
       "rosyMethod" : "SpeakersEndpoint.getSpeakers",
       "request" : {
@@ -151,10 +173,42 @@
             }
           }
         }
+      },
+      "CollectionResponse_Speakers" : {
+        "id" : "CollectionResponse_Speakers",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "Speakers"
+            }
+          },
+          "nextPageToken" : {
+            "type" : "string"
+          }
+        }
       }
     },
     "methods" : {
-      "SpeakersEndpoint.removeSpeakers" : {
+      "SpeakersEndpoint.search" : {
+        "response" : {
+          "type" : "object",
+          "$ref" : "Speakerss"
+        }
+      },
+      "SpeakersEndpoint.addToSearchIndex" : {
+        "request" : {
+          "$ref" : "Speakers"
+        },
+        "response" : {
+          "$ref" : "empty"
+        }
+      },
+      "SpeakersEndpoint.insertSpeakers" : {
+        "request" : {
+          "$ref" : "Speakers"
+        },
         "response" : {
           "$ref" : "Speakers"
         }
@@ -167,23 +221,19 @@
           "$ref" : "Speakers"
         }
       },
-      "SpeakersEndpoint.insertSpeakers" : {
-        "request" : {
+      "SpeakersEndpoint.removeSpeakers" : {
+        "response" : {
           "$ref" : "Speakers"
-        },
+        }
+      },
+      "SpeakersEndpoint.getSpeakers" : {
         "response" : {
           "$ref" : "Speakers"
         }
       },
       "SpeakersEndpoint.listSpeakers" : {
         "response" : {
-          "type" : "object",
-          "$ref" : "Speakerss"
-        }
-      },
-      "SpeakersEndpoint.getSpeakers" : {
-        "response" : {
-          "$ref" : "Speakers"
+          "$ref" : "CollectionResponse_Speakers"
         }
       }
     }
