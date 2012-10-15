@@ -7,6 +7,10 @@ import java.io.OutputStream;
 import java.net.URL;
 import java.net.URLConnection;
 
+/**
+ * @author dmotta
+ *
+ */
 public class TestUtils {
   
   private String charset = "UTF-8";

@@ -15,11 +15,12 @@
   <servlet-class>com.google.api.server.spi.SystemServiceServlet</servlet-class>
   <init-param>
    <param-name>services</param-name>
-   <param-value>pe.gdglima.devfestlima.engine.bo.SpeakersEndpoint</param-value>
+   <param-value>pe.gdglima.devfestlima.engine.bo.SpeakersEndpoint,pe.gdglima.devfestlima.engine.bo.EventEndpoint,pe.gdglima.devfestlima.engine.bo.TrackEndpoint</param-value>
   </init-param>
  </servlet>
  <servlet-mapping>
   <servlet-name>SystemServiceServlet</servlet-name>
+
   <url-pattern>/_ah/spi/*</url-pattern>
  </servlet-mapping>
 </web-app>

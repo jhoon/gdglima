@@ -1,0 +1,176 @@
+{
+  "extends" : "thirdParty.api",
+  "abstract" : false,
+  "root" : "https://gdgdevfestlima.appspot.com/_ah/api",
+  "name" : "trackendpoint",
+  "version" : "v1",
+  "description" : "",
+  "defaultVersion" : false,
+  "adapter" : {
+    "bns" : "http://gdgdevfestlima.appspot.com/_ah/spi",
+    "deadline" : 10.0,
+    "type" : "lily"
+  },
+  "auth" : {
+    "allowCookieAuth" : false
+  },
+  "frontendLimits" : {
+    "unregisteredUserQps" : -1,
+    "unregisteredQps" : -1,
+    "unregisteredDaily" : -1,
+    "rules" : [ ]
+  },
+  "cacheControl" : {
+    "type" : "no-cache",
+    "maxAge" : 0
+  },
+  "methods" : {
+    "trackendpoint.getTrack" : {
+      "path" : "track/{id}",
+      "httpMethod" : "GET",
+      "rosyMethod" : "TrackEndpoint.getTrack",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "required" : true,
+            "type" : "string"
+          }
+        },
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "trackendpoint.insertTrack" : {
+      "path" : "track",
+      "httpMethod" : "POST",
+      "rosyMethod" : "TrackEndpoint.insertTrack",
+      "request" : {
+        "parameters" : {
+        },
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "trackendpoint.removeTrack" : {
+      "path" : "track/{id}",
+      "httpMethod" : "DELETE",
+      "rosyMethod" : "TrackEndpoint.removeTrack",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "required" : true,
+            "type" : "string"
+          }
+        },
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "trackendpoint.updateTrack" : {
+      "path" : "track",
+      "httpMethod" : "PUT",
+      "rosyMethod" : "TrackEndpoint.updateTrack",
+      "request" : {
+        "parameters" : {
+        },
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "trackendpoint.listTrack" : {
+      "path" : "track",
+      "httpMethod" : "GET",
+      "rosyMethod" : "TrackEndpoint.listTrack",
+      "request" : {
+        "parameters" : {
+        },
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    }
+  },
+  "descriptor" : {
+    "schemas" : {
+      "Track" : {
+        "id" : "Track",
+        "type" : "object",
+        "properties" : {
+          "color" : {
+            "type" : "string"
+          },
+          "id" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "summary" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Tracks" : {
+        "id" : "Tracks",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "Track"
+            }
+          }
+        }
+      }
+    },
+    "methods" : {
+      "TrackEndpoint.getTrack" : {
+        "response" : {
+          "$ref" : "Track"
+        }
+      },
+      "TrackEndpoint.insertTrack" : {
+        "request" : {
+          "$ref" : "Track"
+        },
+        "response" : {
+          "$ref" : "Track"
+        }
+      },
+      "TrackEndpoint.removeTrack" : {
+        "response" : {
+          "$ref" : "Track"
+        }
+      },
+      "TrackEndpoint.updateTrack" : {
+        "request" : {
+          "$ref" : "Track"
+        },
+        "response" : {
+          "$ref" : "Track"
+        }
+      },
+      "TrackEndpoint.listTrack" : {
+        "response" : {
+          "type" : "object",
+          "$ref" : "Tracks"
+        }
+      }
+    }
+  }
+}
