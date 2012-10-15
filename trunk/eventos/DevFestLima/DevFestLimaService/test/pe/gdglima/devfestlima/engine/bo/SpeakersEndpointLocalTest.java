@@ -4,6 +4,10 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
+/**
+ * @author dmotta
+ *
+ */
 public class SpeakersEndpointLocalTest extends TestUtils {
 
 	@Test

@@ -2,7 +2,7 @@
   "extends" : "thirdParty.api",
   "abstract" : false,
   "root" : "https://gdgdevfestlima.appspot.com/_ah/api",
-  "name" : "speakers",
+  "name" : "event",
   "version" : "v1",
   "description" : "Esta entidad representa a los expositores.",
   "defaultVersion" : false,
@@ -25,32 +25,10 @@
     "maxAge" : 0
   },
   "methods" : {
-    "speakers.speakers.list" : {
-      "path" : "speakers/list",
+    "event.listEvent" : {
+      "path" : "event",
       "httpMethod" : "GET",
-      "rosyMethod" : "SpeakersEndpoint.listSpeakers",
-      "request" : {
-        "parameters" : {
-          "cursor" : {
-            "required" : false,
-            "type" : "string"
-          },
-          "limit" : {
-            "required" : false,
-            "type" : "integer"
-          }
-        },
-        "body" : "autoTemplate(backendRequest)",
-        "bodyName" : "resource"
-      },
-      "response" : {
-        "body" : "autoTemplate(backendResponse)"
-      }
-    },
-    "speakers.speakers.insert" : {
-      "path" : "speakers/insert",
-      "httpMethod" : "POST",
-      "rosyMethod" : "SpeakersEndpoint.insertSpeakers",
+      "rosyMethod" : "EventEndpoint.listEvent",
       "request" : {
         "parameters" : {
         },
@@ -61,24 +39,10 @@
         "body" : "autoTemplate(backendResponse)"
       }
     },
-    "speakers.addToSearchIndex" : {
-      "path" : "addToSearchIndex",
-      "httpMethod" : "POST",
-      "rosyMethod" : "SpeakersEndpoint.addToSearchIndex",
-      "request" : {
-        "parameters" : {
-        },
-        "body" : "autoTemplate(backendRequest)",
-        "bodyName" : "resource"
-      },
-      "response" : {
-        "body" : "empty"
-      }
-    },
-    "speakers.updateSpeakers" : {
-      "path" : "speakers",
+    "event.updateEvent" : {
+      "path" : "event",
       "httpMethod" : "PUT",
-      "rosyMethod" : "SpeakersEndpoint.updateSpeakers",
+      "rosyMethod" : "EventEndpoint.updateEvent",
       "request" : {
         "parameters" : {
         },
@@ -89,10 +53,10 @@
         "body" : "autoTemplate(backendResponse)"
       }
     },
-    "speakers.removeSpeakers" : {
-      "path" : "speakers/{id}",
-      "httpMethod" : "DELETE",
-      "rosyMethod" : "SpeakersEndpoint.removeSpeakers",
+    "event.event.get" : {
+      "path" : "event/get/{id}",
+      "httpMethod" : "GET",
+      "rosyMethod" : "EventEndpoint.getEvent",
       "request" : {
         "parameters" : {
           "id" : {
@@ -107,10 +71,24 @@
         "body" : "autoTemplate(backendResponse)"
       }
     },
-    "speakers.speakers.get" : {
-      "path" : "speakers/get/{id}",
-      "httpMethod" : "GET",
-      "rosyMethod" : "SpeakersEndpoint.getSpeakers",
+    "event.event.insert" : {
+      "path" : "event/insert",
+      "httpMethod" : "POST",
+      "rosyMethod" : "EventEndpoint.insertEvent",
+      "request" : {
+        "parameters" : {
+        },
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "event.removeEvent" : {
+      "path" : "event/{id}",
+      "httpMethod" : "DELETE",
+      "rosyMethod" : "EventEndpoint.removeEvent",
       "request" : {
         "parameters" : {
           "id" : {
@@ -128,112 +106,117 @@
   },
   "descriptor" : {
     "schemas" : {
-      "Speakers" : {
-        "id" : "Speakers",
+      "Event" : {
+        "id" : "Event",
         "type" : "object",
         "properties" : {
-          "bio" : {
+          "attending" : {
             "type" : "string"
           },
-          "displayName" : {
+          "end_date" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "end_time" : {
             "type" : "string"
           },
-          "firstName" : {
+          "has_streaming" : {
             "type" : "string"
           },
           "id" : {
             "type" : "string",
             "format" : "int64"
           },
-          "lastName" : {
+          "id_event" : {
             "type" : "string"
           },
-          "plusOneUrl" : {
+          "room" : {
             "type" : "string"
           },
-          "speakerId" : {
+          "start_date" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "start_time" : {
             "type" : "string"
           },
-          "thumbnailUrl" : {
+          "summary" : {
             "type" : "string"
           },
-          "userId" : {
+          "tags" : {
+            "type" : "string"
+          },
+          "title" : {
+            "type" : "string"
+          },
+          "track" : {
+            "$ref" : "Track"
+          }
+        }
+      },
+      "Track" : {
+        "id" : "Track",
+        "type" : "object",
+        "properties" : {
+          "color" : {
+            "type" : "string"
+          },
+          "id" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "summary" : {
             "type" : "string"
           }
         }
       },
-      "Speakerss" : {
-        "id" : "Speakerss",
+      "Events" : {
+        "id" : "Events",
         "type" : "object",
         "properties" : {
           "items" : {
             "type" : "array",
             "items" : {
-              "$ref" : "Speakers"
+              "$ref" : "Event"
             }
-          }
-        }
-      },
-      "CollectionResponse_Speakers" : {
-        "id" : "CollectionResponse_Speakers",
-        "type" : "object",
-        "properties" : {
-          "items" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "Speakers"
-            }
-          },
-          "nextPageToken" : {
-            "type" : "string"
           }
         }
       }
     },
     "methods" : {
-      "SpeakersEndpoint.search" : {
+      "EventEndpoint.listEvent" : {
         "response" : {
           "type" : "object",
-          "$ref" : "Speakerss"
+          "$ref" : "Events"
         }
       },
-      "SpeakersEndpoint.insertSpeakers" : {
+      "EventEndpoint.updateEvent" : {
         "request" : {
-          "$ref" : "Speakers"
+          "$ref" : "Event"
         },
         "response" : {
-          "$ref" : "Speakers"
+          "$ref" : "Event"
         }
       },
-      "SpeakersEndpoint.addToSearchIndex" : {
+      "EventEndpoint.getEvent" : {
+        "response" : {
+          "$ref" : "Event"
+        }
+      },
+      "EventEndpoint.insertEvent" : {
         "request" : {
-          "$ref" : "Speakers"
+          "$ref" : "Event"
         },
         "response" : {
-          "$ref" : "empty"
+          "$ref" : "Event"
         }
       },
-      "SpeakersEndpoint.updateSpeakers" : {
-        "request" : {
-          "$ref" : "Speakers"
-        },
+      "EventEndpoint.removeEvent" : {
         "response" : {
-          "$ref" : "Speakers"
-        }
-      },
-      "SpeakersEndpoint.removeSpeakers" : {
-        "response" : {
-          "$ref" : "Speakers"
-        }
-      },
-      "SpeakersEndpoint.getSpeakers" : {
-        "response" : {
-          "$ref" : "Speakers"
-        }
-      },
-      "SpeakersEndpoint.listSpeakers" : {
-        "response" : {
-          "$ref" : "CollectionResponse_Speakers"
+          "$ref" : "Event"
         }
       }
     }
