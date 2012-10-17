@@ -34,7 +34,8 @@ public class Event {
 	@Persistent
 	private Date end_date;
 	
-	@Persistent(dependent = "true")
+	
+	@Persistent(defaultFetchGroup = "true", dependent = "true")
 	private Track track;
 	
 	@Persistent

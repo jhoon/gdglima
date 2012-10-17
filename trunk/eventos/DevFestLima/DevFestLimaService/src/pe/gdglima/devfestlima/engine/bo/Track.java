@@ -6,14 +6,16 @@ import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
 
+import com.google.appengine.api.datastore.Key;
+
 
 
 @PersistenceCapable(identityType = IdentityType.APPLICATION)
 public class Track {
 
 	@PrimaryKey
-	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
-	private Long id;
+    @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
+    private Key key;
 
 	@Persistent
 	private String name;
@@ -28,13 +30,7 @@ public class Track {
 	public Track() {	
 	}
 	
-	public Long getId() {
-		return id;
-	}
 
-	public void setId(Long id) {
-		this.id = id;
-	}
 
 	public String getName() {
 		return name;
