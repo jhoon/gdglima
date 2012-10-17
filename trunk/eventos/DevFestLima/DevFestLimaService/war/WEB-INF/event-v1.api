@@ -57,10 +57,10 @@
         "body" : "autoTemplate(backendResponse)"
       }
     },
-    "event.event.insert" : {
-      "path" : "event/insert",
-      "httpMethod" : "POST",
-      "rosyMethod" : "EventEndpoint.insertEvent",
+    "event.updateEvent" : {
+      "path" : "event",
+      "httpMethod" : "PUT",
+      "rosyMethod" : "EventEndpoint.updateEvent",
       "request" : {
         "parameters" : {
         },
@@ -89,10 +89,10 @@
         "body" : "autoTemplate(backendResponse)"
       }
     },
-    "event.updateEvent" : {
-      "path" : "event",
-      "httpMethod" : "PUT",
-      "rosyMethod" : "EventEndpoint.updateEvent",
+    "event.event.insert" : {
+      "path" : "event/insert",
+      "httpMethod" : "POST",
+      "rosyMethod" : "EventEndpoint.insertEvent",
       "request" : {
         "parameters" : {
         },
@@ -194,7 +194,7 @@
           "$ref" : "Events"
         }
       },
-      "EventEndpoint.insertEvent" : {
+      "EventEndpoint.updateEvent" : {
         "request" : {
           "$ref" : "Event"
         },
@@ -207,7 +207,7 @@
           "$ref" : "Event"
         }
       },
-      "EventEndpoint.updateEvent" : {
+      "EventEndpoint.insertEvent" : {
         "request" : {
           "$ref" : "Event"
         },

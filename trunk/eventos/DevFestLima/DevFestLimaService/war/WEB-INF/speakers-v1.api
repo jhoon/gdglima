@@ -79,34 +79,6 @@
         "body" : "autoTemplate(backendResponse)"
       }
     },
-    "speakers.addToSearchIndex" : {
-      "path" : "addToSearchIndex",
-      "httpMethod" : "POST",
-      "rosyMethod" : "SpeakersEndpoint.addToSearchIndex",
-      "request" : {
-        "parameters" : {
-        },
-        "body" : "autoTemplate(backendRequest)",
-        "bodyName" : "resource"
-      },
-      "response" : {
-        "body" : "empty"
-      }
-    },
-    "speakers.updateSpeakers" : {
-      "path" : "speakers",
-      "httpMethod" : "PUT",
-      "rosyMethod" : "SpeakersEndpoint.updateSpeakers",
-      "request" : {
-        "parameters" : {
-        },
-        "body" : "autoTemplate(backendRequest)",
-        "bodyName" : "resource"
-      },
-      "response" : {
-        "body" : "autoTemplate(backendResponse)"
-      }
-    },
     "speakers.removeSpeakers" : {
       "path" : "speakers/{id}",
       "httpMethod" : "DELETE",
@@ -123,6 +95,34 @@
       },
       "response" : {
         "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "speakers.updateSpeakers" : {
+      "path" : "speakers",
+      "httpMethod" : "PUT",
+      "rosyMethod" : "SpeakersEndpoint.updateSpeakers",
+      "request" : {
+        "parameters" : {
+        },
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "speakers.addToSearchIndex" : {
+      "path" : "addToSearchIndex",
+      "httpMethod" : "POST",
+      "rosyMethod" : "SpeakersEndpoint.addToSearchIndex",
+      "request" : {
+        "parameters" : {
+        },
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "empty"
       }
     }
   },
@@ -197,17 +197,30 @@
           "$ref" : "Speakerss"
         }
       },
-      "SpeakersEndpoint.getSpeakers" : {
-        "response" : {
-          "$ref" : "Speakers"
-        }
-      },
       "SpeakersEndpoint.listSpeakers" : {
         "response" : {
           "$ref" : "CollectionResponse_Speakers"
         }
       },
+      "SpeakersEndpoint.getSpeakers" : {
+        "response" : {
+          "$ref" : "Speakers"
+        }
+      },
       "SpeakersEndpoint.insertSpeakers" : {
+        "request" : {
+          "$ref" : "Speakers"
+        },
+        "response" : {
+          "$ref" : "Speakers"
+        }
+      },
+      "SpeakersEndpoint.removeSpeakers" : {
+        "response" : {
+          "$ref" : "Speakers"
+        }
+      },
+      "SpeakersEndpoint.updateSpeakers" : {
         "request" : {
           "$ref" : "Speakers"
         },
@@ -221,19 +234,6 @@
         },
         "response" : {
           "$ref" : "empty"
-        }
-      },
-      "SpeakersEndpoint.updateSpeakers" : {
-        "request" : {
-          "$ref" : "Speakers"
-        },
-        "response" : {
-          "$ref" : "Speakers"
-        }
-      },
-      "SpeakersEndpoint.removeSpeakers" : {
-        "response" : {
-          "$ref" : "Speakers"
         }
       }
     }

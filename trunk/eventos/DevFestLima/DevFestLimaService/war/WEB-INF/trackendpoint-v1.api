@@ -25,6 +25,48 @@
     "maxAge" : 0
   },
   "methods" : {
+    "trackendpoint.listTrack" : {
+      "path" : "track",
+      "httpMethod" : "GET",
+      "rosyMethod" : "TrackEndpoint.listTrack",
+      "request" : {
+        "parameters" : {
+        },
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "trackendpoint.updateTrack" : {
+      "path" : "track",
+      "httpMethod" : "PUT",
+      "rosyMethod" : "TrackEndpoint.updateTrack",
+      "request" : {
+        "parameters" : {
+        },
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "trackendpoint.insertTrack" : {
+      "path" : "track",
+      "httpMethod" : "POST",
+      "rosyMethod" : "TrackEndpoint.insertTrack",
+      "request" : {
+        "parameters" : {
+        },
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
     "trackendpoint.getTrack" : {
       "path" : "track/{id}",
       "httpMethod" : "GET",
@@ -53,48 +95,6 @@
             "required" : true,
             "type" : "string"
           }
-        },
-        "body" : "autoTemplate(backendRequest)",
-        "bodyName" : "resource"
-      },
-      "response" : {
-        "body" : "autoTemplate(backendResponse)"
-      }
-    },
-    "trackendpoint.updateTrack" : {
-      "path" : "track",
-      "httpMethod" : "PUT",
-      "rosyMethod" : "TrackEndpoint.updateTrack",
-      "request" : {
-        "parameters" : {
-        },
-        "body" : "autoTemplate(backendRequest)",
-        "bodyName" : "resource"
-      },
-      "response" : {
-        "body" : "autoTemplate(backendResponse)"
-      }
-    },
-    "trackendpoint.listTrack" : {
-      "path" : "track",
-      "httpMethod" : "GET",
-      "rosyMethod" : "TrackEndpoint.listTrack",
-      "request" : {
-        "parameters" : {
-        },
-        "body" : "autoTemplate(backendRequest)",
-        "bodyName" : "resource"
-      },
-      "response" : {
-        "body" : "autoTemplate(backendResponse)"
-      }
-    },
-    "trackendpoint.insertTrack" : {
-      "path" : "track",
-      "httpMethod" : "POST",
-      "rosyMethod" : "TrackEndpoint.insertTrack",
-      "request" : {
-        "parameters" : {
         },
         "body" : "autoTemplate(backendRequest)",
         "bodyName" : "resource"
@@ -135,14 +135,10 @@
       }
     },
     "methods" : {
-      "TrackEndpoint.getTrack" : {
+      "TrackEndpoint.listTrack" : {
         "response" : {
-          "$ref" : "Track"
-        }
-      },
-      "TrackEndpoint.removeTrack" : {
-        "response" : {
-          "$ref" : "Track"
+          "type" : "object",
+          "$ref" : "Tracks"
         }
       },
       "TrackEndpoint.updateTrack" : {
@@ -153,16 +149,20 @@
           "$ref" : "Track"
         }
       },
-      "TrackEndpoint.listTrack" : {
-        "response" : {
-          "type" : "object",
-          "$ref" : "Tracks"
-        }
-      },
       "TrackEndpoint.insertTrack" : {
         "request" : {
           "$ref" : "Track"
         },
+        "response" : {
+          "$ref" : "Track"
+        }
+      },
+      "TrackEndpoint.getTrack" : {
+        "response" : {
+          "$ref" : "Track"
+        }
+      },
+      "TrackEndpoint.removeTrack" : {
         "response" : {
           "$ref" : "Track"
         }
