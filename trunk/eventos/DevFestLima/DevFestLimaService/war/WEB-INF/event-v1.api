@@ -25,34 +25,6 @@
     "maxAge" : 0
   },
   "methods" : {
-    "event.listEvent" : {
-      "path" : "event",
-      "httpMethod" : "GET",
-      "rosyMethod" : "EventEndpoint.listEvent",
-      "request" : {
-        "parameters" : {
-        },
-        "body" : "autoTemplate(backendRequest)",
-        "bodyName" : "resource"
-      },
-      "response" : {
-        "body" : "autoTemplate(backendResponse)"
-      }
-    },
-    "event.updateEvent" : {
-      "path" : "event",
-      "httpMethod" : "PUT",
-      "rosyMethod" : "EventEndpoint.updateEvent",
-      "request" : {
-        "parameters" : {
-        },
-        "body" : "autoTemplate(backendRequest)",
-        "bodyName" : "resource"
-      },
-      "response" : {
-        "body" : "autoTemplate(backendResponse)"
-      }
-    },
     "event.event.get" : {
       "path" : "event/get/{id}",
       "httpMethod" : "GET",
@@ -63,6 +35,20 @@
             "required" : true,
             "type" : "string"
           }
+        },
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "event.event.list" : {
+      "path" : "event/list",
+      "httpMethod" : "GET",
+      "rosyMethod" : "EventEndpoint.listEvent",
+      "request" : {
+        "parameters" : {
         },
         "body" : "autoTemplate(backendRequest)",
         "bodyName" : "resource"
@@ -95,6 +81,20 @@
             "required" : true,
             "type" : "string"
           }
+        },
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "event.updateEvent" : {
+      "path" : "event",
+      "httpMethod" : "PUT",
+      "rosyMethod" : "EventEndpoint.updateEvent",
+      "request" : {
+        "parameters" : {
         },
         "body" : "autoTemplate(backendRequest)",
         "bodyName" : "resource"
@@ -161,10 +161,6 @@
           "color" : {
             "type" : "string"
           },
-          "id" : {
-            "type" : "string",
-            "format" : "int64"
-          },
           "name" : {
             "type" : "string"
           },
@@ -187,23 +183,15 @@
       }
     },
     "methods" : {
+      "EventEndpoint.getEvent" : {
+        "response" : {
+          "$ref" : "Event"
+        }
+      },
       "EventEndpoint.listEvent" : {
         "response" : {
           "type" : "object",
           "$ref" : "Events"
-        }
-      },
-      "EventEndpoint.updateEvent" : {
-        "request" : {
-          "$ref" : "Event"
-        },
-        "response" : {
-          "$ref" : "Event"
-        }
-      },
-      "EventEndpoint.getEvent" : {
-        "response" : {
-          "$ref" : "Event"
         }
       },
       "EventEndpoint.insertEvent" : {
@@ -215,6 +203,14 @@
         }
       },
       "EventEndpoint.removeEvent" : {
+        "response" : {
+          "$ref" : "Event"
+        }
+      },
+      "EventEndpoint.updateEvent" : {
+        "request" : {
+          "$ref" : "Event"
+        },
         "response" : {
           "$ref" : "Event"
         }
