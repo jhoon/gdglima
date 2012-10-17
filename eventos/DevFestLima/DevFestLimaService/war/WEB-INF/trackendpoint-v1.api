@@ -43,20 +43,6 @@
         "body" : "autoTemplate(backendResponse)"
       }
     },
-    "trackendpoint.insertTrack" : {
-      "path" : "track",
-      "httpMethod" : "POST",
-      "rosyMethod" : "TrackEndpoint.insertTrack",
-      "request" : {
-        "parameters" : {
-        },
-        "body" : "autoTemplate(backendRequest)",
-        "bodyName" : "resource"
-      },
-      "response" : {
-        "body" : "autoTemplate(backendResponse)"
-      }
-    },
     "trackendpoint.removeTrack" : {
       "path" : "track/{id}",
       "httpMethod" : "DELETE",
@@ -102,6 +88,20 @@
       "response" : {
         "body" : "autoTemplate(backendResponse)"
       }
+    },
+    "trackendpoint.insertTrack" : {
+      "path" : "track",
+      "httpMethod" : "POST",
+      "rosyMethod" : "TrackEndpoint.insertTrack",
+      "request" : {
+        "parameters" : {
+        },
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
     }
   },
   "descriptor" : {
@@ -112,10 +112,6 @@
         "properties" : {
           "color" : {
             "type" : "string"
-          },
-          "id" : {
-            "type" : "string",
-            "format" : "int64"
           },
           "name" : {
             "type" : "string"
@@ -144,14 +140,6 @@
           "$ref" : "Track"
         }
       },
-      "TrackEndpoint.insertTrack" : {
-        "request" : {
-          "$ref" : "Track"
-        },
-        "response" : {
-          "$ref" : "Track"
-        }
-      },
       "TrackEndpoint.removeTrack" : {
         "response" : {
           "$ref" : "Track"
@@ -169,6 +157,14 @@
         "response" : {
           "type" : "object",
           "$ref" : "Tracks"
+        }
+      },
+      "TrackEndpoint.insertTrack" : {
+        "request" : {
+          "$ref" : "Track"
+        },
+        "response" : {
+          "$ref" : "Track"
         }
       }
     }

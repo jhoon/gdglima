@@ -47,6 +47,24 @@
         "body" : "autoTemplate(backendResponse)"
       }
     },
+    "speakers.speakers.get" : {
+      "path" : "speakers/get/{id}",
+      "httpMethod" : "GET",
+      "rosyMethod" : "SpeakersEndpoint.getSpeakers",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "required" : true,
+            "type" : "string"
+          }
+        },
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
     "speakers.speakers.insert" : {
       "path" : "speakers/insert",
       "httpMethod" : "POST",
@@ -93,24 +111,6 @@
       "path" : "speakers/{id}",
       "httpMethod" : "DELETE",
       "rosyMethod" : "SpeakersEndpoint.removeSpeakers",
-      "request" : {
-        "parameters" : {
-          "id" : {
-            "required" : true,
-            "type" : "string"
-          }
-        },
-        "body" : "autoTemplate(backendRequest)",
-        "bodyName" : "resource"
-      },
-      "response" : {
-        "body" : "autoTemplate(backendResponse)"
-      }
-    },
-    "speakers.speakers.get" : {
-      "path" : "speakers/get/{id}",
-      "httpMethod" : "GET",
-      "rosyMethod" : "SpeakersEndpoint.getSpeakers",
       "request" : {
         "parameters" : {
           "id" : {
@@ -197,6 +197,16 @@
           "$ref" : "Speakerss"
         }
       },
+      "SpeakersEndpoint.getSpeakers" : {
+        "response" : {
+          "$ref" : "Speakers"
+        }
+      },
+      "SpeakersEndpoint.listSpeakers" : {
+        "response" : {
+          "$ref" : "CollectionResponse_Speakers"
+        }
+      },
       "SpeakersEndpoint.insertSpeakers" : {
         "request" : {
           "$ref" : "Speakers"
@@ -224,16 +234,6 @@
       "SpeakersEndpoint.removeSpeakers" : {
         "response" : {
           "$ref" : "Speakers"
-        }
-      },
-      "SpeakersEndpoint.getSpeakers" : {
-        "response" : {
-          "$ref" : "Speakers"
-        }
-      },
-      "SpeakersEndpoint.listSpeakers" : {
-        "response" : {
-          "$ref" : "CollectionResponse_Speakers"
         }
       }
     }
