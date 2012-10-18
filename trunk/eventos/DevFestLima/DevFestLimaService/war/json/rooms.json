@@ -1,0 +1,87 @@
+{
+  "rooms": [
+
+
+    {
+      "id": "lunchAula",
+      "name":"Lunch Aula",
+      "floor": "1"
+    },
+
+
+    {
+      "id": "1",
+      "name":"Aula 1",
+      "floor": "2"
+    },
+    {
+      "id": "2",
+      "name":"Aula 2",
+      "floor": "2"
+    },
+    {
+      "id": "3",
+      "name":"Aula 3",
+      "floor": "2"
+    },
+    {
+      "id": "4",
+      "name":"Aula 4",
+      "floor": "2"
+    },
+    {
+      "id": "5",
+      "name":"Aula 5",
+      "floor": "2"
+    },
+    {
+      "id": "6",
+      "name":"Aula 6",
+      "floor": "2"
+    },
+    {
+      "id": "7",
+      "name":"Aula 7",
+      "floor": "2"
+    },
+    {
+      "id": "8",
+      "name":"Aula 8",
+      "floor": "2"
+    },
+    {
+      "id": "9",
+      "name":"Aula 9",
+      "floor": "2"
+    },
+    {
+      "id": "codelab1",
+      "name":"Code Lab 1",
+      "floor": "2"
+    },
+    {
+      "id": "codelab2",
+      "name":"Code Lab 2",
+      "floor": "2"
+    },
+
+
+    {
+      "id": "10",
+      "name":"Aula 10",
+      "floor": "3"
+    },
+    {
+      "id": "11",
+      "name":"Aula 11",
+      "floor": "3"
+    },
+    {
+      "id": "keynote",
+      "name":"Keynote Aula",
+      "floor": "3"
+    }
+
+
+  ]
+}
