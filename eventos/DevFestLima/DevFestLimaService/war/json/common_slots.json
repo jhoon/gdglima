@@ -1,0 +1,94 @@
+{    
+  "day": [
+    {
+      "date": "2012-10-27",
+      "slot": [
+        {
+          "start": "08:30",
+          "end": "09:15",
+          "title": "Recepcion de Asistentes.",
+          "meta": "Auditorio"
+        },
+        {
+          "start": "09:15",
+          "end": "09:45",
+          "title": "Conferencia GDG Lima y Google DevRel",
+          "meta": "Auditorio"
+        },
+         {
+          "start": "09:45",
+          "end": "10:00",
+          "title": "Integracion con otras comunidades",
+          "meta": "Auditorio"
+        },
+        
+        {
+          "start": "13:00",
+          "end": "14:00",
+          "title": "Almuerzo Networking.",
+          "meta": "Auditorio"
+        },
+        {
+          "start": "17:00",
+          "end": "18:00",
+          "title": "Expositor de Google",
+          "meta": "Auditorio"
+        },
+        {
+          "start": "18:00",
+          "end": "18:30",
+          "title": "Retrospectiva del evento.",
+          "meta": "Auditorio"
+        },
+        {
+          "start": "18:30",
+          "end": "18:40",
+          "title": "Agradecimientos y cierre del evento.",
+          "meta": "Auditorio"
+        }
+      ]
+    },
+    {
+      "date": "2012-10-28",
+      "slot": [
+        {
+          "start": "17:30",
+          "end": "18:00",
+          "title": "Recepcion y Bienvenida",
+          "meta": "Auditorio"
+        },
+        {
+          "start": "18:15",
+          "end": "18:30",
+          "title": "Google Intro",
+          "meta": "Auditorio"
+        },
+        {
+          "start": "18:30",
+          "end": "19:15",
+          "title": "Panel de discusion sobre emprendimiento",
+          "meta": "Auditorio"
+        },
+         {
+          "start": "19:15",
+          "end": "19:30",
+          "title": "Presentacion del Ecosistema Actual : Casos de Exito",
+          "meta": "Auditorio"
+        },
+        {
+          "start": "19:30",
+          "end": "19:45",
+          "title": "Herramientas para emprendedores",
+          "meta": "Auditorio"
+        },
+         {
+          "start": "19:45",
+          "end": "20:00",
+          "title": "Cierre del evento",
+          "meta": "Auditorio"
+        }
+      ]
+    }
+    
+  ]
+}
