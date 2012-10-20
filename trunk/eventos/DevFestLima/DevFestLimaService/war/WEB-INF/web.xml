@@ -1,4 +1,77 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?><web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.5" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	
+	 <listener>
+        <listener-class>
+            pe.gdglima.devfestlima.engine.gcm.ApiKeyInitializer
+        </listener-class>
+    </listener>
+
+	     <!-- device endpoints -->
+
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>
+            pe.gdglima.devfestlima.engine.gcm.RegisterServlet
+        </servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/register/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UnregisterServlet</servlet-name>
+        <servlet-class>
+            pe.gdglima.devfestlima.engine.gcm.UnregisterServlet
+        </servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UnregisterServlet</servlet-name>
+        <url-pattern>/unregister/*</url-pattern>
+    </servlet-mapping>
+	 
+    <!-- backend endpoints -->
+
+    <servlet>
+        <servlet-name>SendMessageServlet</servlet-name>
+        <servlet-class>
+            pe.gdglima.devfestlima.engine.gcm.SendMessageServlet
+        </servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SendMessageServlet</servlet-name>
+        <url-pattern>/send</url-pattern>
+    </servlet-mapping>
+	 <!-- admin-facing endpoints -->
+
+    <servlet>
+        <servlet-name>AdminServlet</servlet-name>
+        <servlet-class>
+            pe.gdglima.devfestlima.engine.gcm.AdminServlet
+        </servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminServlet</servlet-name>
+        <url-pattern>/admin</url-pattern>
+    </servlet-mapping>
+	     <servlet>
+        <servlet-name>SendMessageToAllServlet</servlet-name>
+        <servlet-class>
+            pe.gdglima.devfestlima.engine.gcm.SendMessageToAllServlet
+        </servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SendMessageToAllServlet</servlet-name>
+        <url-pattern>/sendall</url-pattern>
+    </servlet-mapping>
+	 
+	 
+    <!-- device endpoints -->	
 	<servlet>
 		<servlet-name>DevFestLimaService</servlet-name>
 		<servlet-class>pe.gdglima.devfestlima.engine.DevFestLimaServiceServlet</servlet-class>

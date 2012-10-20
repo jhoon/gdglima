@@ -25,10 +25,10 @@
     "maxAge" : 0
   },
   "methods" : {
-    "trackendpoint.listTrack" : {
+    "trackendpoint.updateTrack" : {
       "path" : "track",
-      "httpMethod" : "GET",
-      "rosyMethod" : "TrackEndpoint.listTrack",
+      "httpMethod" : "PUT",
+      "rosyMethod" : "TrackEndpoint.updateTrack",
       "request" : {
         "parameters" : {
         },
@@ -39,10 +39,28 @@
         "body" : "autoTemplate(backendResponse)"
       }
     },
-    "trackendpoint.updateTrack" : {
+    "trackendpoint.removeTrack" : {
+      "path" : "track/{id}",
+      "httpMethod" : "DELETE",
+      "rosyMethod" : "TrackEndpoint.removeTrack",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "required" : true,
+            "type" : "string"
+          }
+        },
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "trackendpoint.listTrack" : {
       "path" : "track",
-      "httpMethod" : "PUT",
-      "rosyMethod" : "TrackEndpoint.updateTrack",
+      "httpMethod" : "GET",
+      "rosyMethod" : "TrackEndpoint.listTrack",
       "request" : {
         "parameters" : {
         },
@@ -71,24 +89,6 @@
       "path" : "track/{id}",
       "httpMethod" : "GET",
       "rosyMethod" : "TrackEndpoint.getTrack",
-      "request" : {
-        "parameters" : {
-          "id" : {
-            "required" : true,
-            "type" : "string"
-          }
-        },
-        "body" : "autoTemplate(backendRequest)",
-        "bodyName" : "resource"
-      },
-      "response" : {
-        "body" : "autoTemplate(backendResponse)"
-      }
-    },
-    "trackendpoint.removeTrack" : {
-      "path" : "track/{id}",
-      "httpMethod" : "DELETE",
-      "rosyMethod" : "TrackEndpoint.removeTrack",
       "request" : {
         "parameters" : {
           "id" : {
@@ -135,18 +135,23 @@
       }
     },
     "methods" : {
-      "TrackEndpoint.listTrack" : {
-        "response" : {
-          "type" : "object",
-          "$ref" : "Tracks"
-        }
-      },
       "TrackEndpoint.updateTrack" : {
         "request" : {
           "$ref" : "Track"
         },
         "response" : {
           "$ref" : "Track"
+        }
+      },
+      "TrackEndpoint.removeTrack" : {
+        "response" : {
+          "$ref" : "Track"
+        }
+      },
+      "TrackEndpoint.listTrack" : {
+        "response" : {
+          "type" : "object",
+          "$ref" : "Tracks"
         }
       },
       "TrackEndpoint.insertTrack" : {
@@ -158,11 +163,6 @@
         }
       },
       "TrackEndpoint.getTrack" : {
-        "response" : {
-          "$ref" : "Track"
-        }
-      },
-      "TrackEndpoint.removeTrack" : {
         "response" : {
           "$ref" : "Track"
         }
